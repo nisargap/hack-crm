@@ -1,0 +1,21 @@
+{
+  "name": "hack-crm-static",
+  "homepage": "/",
+  "authors": [
+    "Nisarga Patel <np8@umbc.edu>"
+  ],
+  "description": "Static assets for hack-crm",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-semantic-ui": "^0.0.3"
+  }
+}

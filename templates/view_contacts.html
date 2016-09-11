@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>View Contacts</title>
+
+	{% include 'partials/common_css.html' %}
+</head>
+<body ng-app="viewContacts" ng-controller="ViewContactController">
+	{% include 'partials/menu.html' %}
+	<div id="add_container" class="ui container">
+	<h1>Contacts</h1>
+	<div class="massive ui input">
+	<input ng-model="search" type="text" placeholder="Search">
+	</div>
+	<br><br>
+  <button class="small ui button">Text Notify All</button>
+  <br><br>
+<div ng-show="contacts" class="ui link cards">
+
+
+	<div class="card" ng-repeat="item in contacts | filter:search">
+    <div ng-show="item.profile_img" class="image">
+      <img ng-src="{{ '{{ item.profile_img }}' }}">
+    </div>
+    <div ng-show="!item.profile_img" class="image">
+      <img src="http://library.unn.edu.ng/wp-content/uploads/sites/42/2016/03/prifile-pic.png">
+    </div>
+    <div class="content">
+      <div class="header" ng-bind="item.name"></div>
+      <div class="meta">
+        <a ng-bind="item.phone"></a>
+      </div>
+      <h4 ng-bind="item.company"></h4>
+      <div class="description">
+      	<span ng-bind="item.address"></span>
+        {% include 'partials/contact_card_dropdown.html' %}
+      </div>
+    </div>
+    <div class="extra content">
+      <span ng-bind="item.datetime.slice(0,10)" class="right floated">
+      </span>
+      <span>
+        <i class="user icon"></i>
+        <div style="display:inline;" ng-bind="item.email"></div>
+      </span>
+    </div>
+  </div>
+	
+  </div>
+  {% include 'partials/modals/compose_email.html' %}
+	{% include 'partials/modals/compose_text.html' %}
+	{% include 'partials/common_scripts.html' %}
+	<script src="static/modules/contact/view_contacts.js"></script>
+</body>
+</html>

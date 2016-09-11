@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add Contact</title>
+
+	{% include 'partials/common_css.html' %}
+</head>
+<body ng-app="addContact" ng-controller="ContactController">
+	
+	{% include 'partials/menu.html' %}
+	<div id="add_container" class="ui raised very padded text container segment">
+	<h3>Add New Company Contact</h3>
+	<form class="ui form" ng-submit="add_contact()">
+		
+		<div class="field">
+			<label>Name*</label>
+			<input type="text" ng-model="name" name="name" placeholder="Name" required>
+		</div>
+		<div class="field">
+			<label>Profile Image (Optional)</label>
+			<input type="text" ng-model="profile_img" name="profile_img" placeholder="Profile URL">
+		</div>
+		<div class="field">
+			<label>Company*</label>
+			<input type="text" ng-model="company" name="company" placeholder="Company" required>
+		</div>
+		<div class="field">
+			<label>Phone*</label>
+			<input type="text" ng-model="phone" name="phone" placeholder="Phone Number">
+		</div>
+		<div class="field">
+			<label>Email*</label>
+			<input type="email" ng-model="email" name="email" placeholder="Email" required>
+		</div>
+		<div class="field">
+			<label>Address (Optional)</label>
+			<textarea rows=2 name="address" ng-model="address" placeholder="Address"></textarea>
+		</div>
+		<button class="ui primary button">Add Contact</button>
+	</form>
+	</div>
+	<modal ng-model="show_modal">
+	    <i class="close icon" ng-click="close_modal()"></i>
+	    <div class="content">
+	      <div class="right">
+	        <h3>Successfully Added Contact</h3>
+	      </div>
+	    </div>
+	</modal>
+	{% include 'partials/common_scripts.html' %}
+	<script src="static/modules/contact/contact_form.js"></script>
+</body>
+</html>

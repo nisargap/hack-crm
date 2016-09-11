@@ -1,0 +1,31 @@
+<div class="ui dropdown">
+  <div class="text">Actions</div>
+  <i class="dropdown icon"></i>
+  <div class="menu">
+    <a ng-click="send_text(item.phone)" class="item"><i class="pencil icon"></i>Text</a>
+    <a ng-click="send_email(item.email)" class="item"><i class="mail icon"></i>Email</a>
+    <!-- <div class="item"><i class="book icon"></i>Read Emails</div> -->
+    <a ng-click="delete_contact(item.email)" class="item">
+      <i class="trash icon"></i>
+      Delete Contact
+    </a>
+    <!-- <div class="item">
+      <i class="dropdown icon"></i>
+      Publish To Web
+      <div class="menu">
+        <div class="item">Google Docs</div>
+        <div class="item">Google Drive</div>
+        <div class="item">Dropbox</div>
+        <div class="item">Adobe Creative Cloud</div>
+        <div class="item">Private FTP</div>
+        <div class="item">Another Service...</div>
+      </div>
+    </div> -->
+  </div>
+</div>
+<script>
+$('.ui.dropdown')
+  .dropdown()
+;
+</script>
+

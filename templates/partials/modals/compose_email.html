@@ -1,0 +1,26 @@
+<modal ng-model="show_modal">
+      
+      <div class="ui {{ '{{ load_send }}' }} inverted dimmer"><div class="ui text loader">Sending</div></div>
+      <i class="close icon" ng-click="close_modal()"></i>
+      <div class="header">
+        <h3>Compose Email</h3>
+      </div>
+      <div class="content">
+        <div class="right">
+          <form class="ui form" ng-submit="send_message()">
+          <div class="big ui input">
+          <input type="text" ng-model="to_email" ng-value="to_email" disabled>
+          </div>
+          <br><br>
+          <div class="big ui input">
+            <input type="text" id="subject" ng-model="subject" ng-value="subject" placeholder="Subject">
+          </div>
+          <br><br>
+          <div class="field">
+            <textarea rows=5 id="msg" name="msg" ng-model="msg" ng-value="msg" placeholder="Message"></textarea>
+          </div>
+          <button class="ui primary button">Send Email</button>
+          </form>
+        </div>
+      </div>
+  </modal>

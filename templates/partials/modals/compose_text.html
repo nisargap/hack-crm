@@ -1,0 +1,22 @@
+<modal ng-model="show_text_modal">
+      
+      <div class="ui {{ '{{ load_send }}' }} inverted dimmer"><div class="ui text loader">Sending</div></div>
+      <i class="close icon" ng-click="close_text_modal()"></i>
+      <div class="header">
+        <h3>Compose Text</h3>
+      </div>
+      <div class="content">
+        <div class="right">
+          <form class="ui form" ng-submit="send_text_message()">
+          <div class="big ui input">
+          <input type="text" ng-model="to_text" ng-value="to_text" disabled>
+          </div>
+          <br><br>
+          <div class="field">
+            <textarea rows=5 id="text_msg" name="text_msg" ng-model="text_msg" ng-value="text_msg" placeholder="Message"></textarea>
+          </div>
+          <button class="ui primary button">Send Text</button>
+          </form>
+        </div>
+      </div>
+  </modal>
